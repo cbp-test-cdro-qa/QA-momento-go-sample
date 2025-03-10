@@ -30,7 +30,7 @@ jobs:
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
-          echo "string Param is '\${{ inputs.stringParam}}'"
+          echo "stringParam is '\${{ inputs.stringParam}}'"
           echo "choice Param is '\${{ inputs.choiceParam}}'"
           echo "boolean Param is '\${{ inputs.booleanParam}}'"
           echo "numberParam is '\${{ inputs.numberParam}}'"
