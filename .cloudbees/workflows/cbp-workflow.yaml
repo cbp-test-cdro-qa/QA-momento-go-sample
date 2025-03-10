@@ -31,6 +31,6 @@ jobs:
         shell: sh
         run: |
           echo "string Param is '\${{ inputs.stringParam}}'"
-          echo "choiceParam is '\${{ inputs.choiceParam}}'"
+          echo "choice Param is '\${{ inputs.choiceParam}}'"
           echo "booleanParam is '\${{ inputs.booleanParam}}'"
           echo "numberParam is '\${{ inputs.numberParam}}'"
