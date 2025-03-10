@@ -32,5 +32,5 @@ jobs:
         run: |
           echo "string Param is '\${{ inputs.stringParam}}'"
           echo "choice Param is '\${{ inputs.choiceParam}}'"
-          echo "booleanParam is '\${{ inputs.booleanParam}}'"
+          echo "boolean Param is '\${{ inputs.booleanParam}}'"
           echo "numberParam is '\${{ inputs.numberParam}}'"
