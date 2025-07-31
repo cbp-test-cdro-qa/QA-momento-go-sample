@@ -16,7 +16,7 @@ jobs:
           provider: bitbucket
           repository: qaas/python-hello-world
           token: ${{ secrets.BBDC_TOKEN }}
-          bitbucket-server-url: https://bitbucket.saas-preprod.beescloud.com/
+          bitbucket-server-url: https://bitbucket.saas-preprod.beescloud.com/scm
         env:
           RUNNER_DEBUG: "1"
       - name: Commit4
@@ -41,7 +41,7 @@ jobs:
           repository: qaas/python-hello-world
           ref: v1.0.0
           token: ${{ secrets.BBDC_TOKEN }}
-          bitbucket-server-url: https://bitbucket.saas-preprod.beescloud.com/
+          bitbucket-server-url: https://bitbucket.saas-preprod.beescloud.com/scm
         env:
           RUNNER_DEBUG: "1"
       - name: Commit5
@@ -66,7 +66,7 @@ jobs:
           repository: qaas/python-hello-world
           ref: d19d4460d89a71cee9a21a386eb5b4fa0688809b
           token: ${{ secrets.BBDC_TOKEN }}
-          bitbucket-server-url: https://bitbucket.saas-preprod.beescloud.com/
+          bitbucket-server-url: https://bitbucket.saas-preprod.beescloud.com/scm
         env:
           RUNNER_DEBUG: "1"
       - name: Commit6
@@ -91,7 +91,7 @@ jobs:
           repository: qaas/python-hello-world
           ref: new-branch
           token: ${{ secrets.BBDC_TOKEN }}
-          bitbucket-server-url: https://bitbucket.saas-preprod.beescloud.com/
+          bitbucket-server-url: https://bitbucket.saas-preprod.beescloud.com/scm
         env:
           RUNNER_DEBUG: "1"
       - name: Commit7
