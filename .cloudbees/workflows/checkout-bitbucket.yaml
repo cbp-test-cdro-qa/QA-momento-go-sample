@@ -14,9 +14,9 @@ jobs:
         id: checkout4
         with:
           provider: bitbucket
-          repository: scm/qaas/python-hello-world
+          repository: qaas/python-hello-world
           token: ${{ secrets.BBDC_TOKEN }}
-          bitbucket-server-url: https://bitbucket.saas-preprod.beescloud.com
+          bitbucket-server-url: https://bitbucket.saas-preprod.beescloud.com/scm
         env:
           RUNNER_DEBUG: "1"
       - name: Commit4
