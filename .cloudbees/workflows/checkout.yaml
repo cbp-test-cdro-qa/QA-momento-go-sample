@@ -52,7 +52,7 @@ jobs:
         with:
           provider: github
           repository: cbp-test-QA-automation/qa-python-helloworld
-          ref: 9acaeb3917421bb2cecccdda0cda1c4e6418d763
+          ref: b4b114f1881872dd1efb33ef7d474b48197c5889
         env:
           RUNNER_DEBUG: "1"
       - name: Commit3
@@ -63,7 +63,7 @@ jobs:
           echo "Inputs:"
           echo "  provider: github"
           echo "  repository: cbp-test-QA-automation/qa-python-helloworld"
-          echo "  ref 9acaeb3917421bb2cecccdda0cda1c4e6418d763"
+          echo "  ref b4b114f1881872dd1efb33ef7d474b48197c5889"
           echo Repository URL = ${{ steps.checkout3.outputs.repository-url }}
           echo Commit ID = ${{ steps.checkout3.outputs.commit }}
           echo Commit URL = ${{ steps.checkout3.outputs.commit-url }}
