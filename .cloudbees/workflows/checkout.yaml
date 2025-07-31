@@ -27,8 +27,8 @@ jobs:
         id: checkout2
         with:
           provider: github
-          repository: rthomascb/anotherrepo
-          ref: v1
+          repository: cbp-test-QA-automation/QA-momento-go-sample
+          ref: v1.0.0
         env:
           RUNNER_DEBUG: "1"
       - name: Commit2
@@ -38,8 +38,8 @@ jobs:
           echo "Commit 2:"
           echo "Inputs:"
           echo "  provider: github"
-          echo "  repository: rthomascb/anotherrepo"
-          echo "  ref v1"
+          echo "  repository: cbp-test-QA-automation/QA-momento-go-sample"
+          echo "  ref v1.0.0"
           echo Repository URL = ${{ steps.checkout2.outputs.repository-url }}
           echo Commit ID = ${{ steps.checkout2.outputs.commit }}
           echo Commit URL = ${{ steps.checkout2.outputs.commit-url }}
@@ -51,8 +51,8 @@ jobs:
         id: checkout3
         with:
           provider: github
-          repository: rthomascb/anotherrepo
-          ref: 5991d1070a23ed3e5343218e6a0e8b79ce8a174c
+          repository: cbp-test-QA-automation/qa-python-helloworld
+          ref: 9acaeb3917421bb2cecccdda0cda1c4e6418d763
         env:
           RUNNER_DEBUG: "1"
       - name: Commit3
@@ -62,8 +62,8 @@ jobs:
           echo "Commit 3:"
           echo "Inputs:"
           echo "  provider: github"
-          echo "  repository: rthomascb/anotherrepo"
-          echo "  ref 5991d1070a23ed3e5343218e6a0e8b79ce8a174c"
+          echo "  repository: cbp-test-QA-automation/qa-python-helloworld"
+          echo "  ref 9acaeb3917421bb2cecccdda0cda1c4e6418d763"
           echo Repository URL = ${{ steps.checkout3.outputs.repository-url }}
           echo Commit ID = ${{ steps.checkout3.outputs.commit }}
           echo Commit URL = ${{ steps.checkout3.outputs.commit-url }}
