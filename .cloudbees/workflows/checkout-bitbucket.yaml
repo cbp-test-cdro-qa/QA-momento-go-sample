@@ -15,7 +15,7 @@ jobs:
         with:
           provider: bitbucket
           repository: qaas/python-hello-world
-          token: ${{ secrets.gitlab_PAT }}
+          token: ${{ secrets.BBDC_TOKEN }}
           bitbucket-server-url: https://bitbucket.saas-preprod.beescloud.com/
         env:
           RUNNER_DEBUG: "1"
@@ -40,7 +40,7 @@ jobs:
           provider: bitbucket
           repository: qaas/python-hello-world
           ref: v1.0.0
-          token: ${{ secrets.gitlab_PAT }}
+          token: ${{ secrets.BBDC_TOKEN }}
           bitbucket-server-url: https://bitbucket.saas-preprod.beescloud.com/
         env:
           RUNNER_DEBUG: "1"
@@ -65,7 +65,7 @@ jobs:
           provider: bitbucket
           repository: qaas/python-hello-world
           ref: d19d4460d89a71cee9a21a386eb5b4fa0688809b
-          token: ${{ secrets.gitlab_PAT }}
+          token: ${{ secrets.BBDC_TOKEN }}
           bitbucket-server-url: https://bitbucket.saas-preprod.beescloud.com/
         env:
           RUNNER_DEBUG: "1"
@@ -90,7 +90,7 @@ jobs:
           provider: bitbucket
           repository: qaas/python-hello-world
           ref: new-branch
-          token: ${{ secrets.gitlab_PAT }}
+          token: ${{ secrets.BBDC_TOKEN }}
           bitbucket-server-url: https://bitbucket.saas-preprod.beescloud.com/
         env:
           RUNNER_DEBUG: "1"
