@@ -20,6 +20,7 @@ jobs:
           echo Commit ID = ${{ steps.checkout1.outputs.commit }}
           echo Commit URL = ${{ steps.checkout1.outputs.commit-url }}
           echo Ref = ${{ steps.checkout1.outputs.ref }}
+          if [ "${{ steps.checkout1.outputs.ref }}" = "refs/heads/main" ]; then echo "Ref variables match, continue..."; else echo "Ref references do not match, exiting."; exit 0; fi
   github-anotherrepo:
     steps:
       - name: Checkout2
@@ -44,6 +45,7 @@ jobs:
           echo Commit ID = ${{ steps.checkout2.outputs.commit }}
           echo Commit URL = ${{ steps.checkout2.outputs.commit-url }}
           echo Ref = ${{ steps.checkout2.outputs.ref }}
+          if [ "${{ steps.checkout1.outputs.ref }}" = "v1.0.0" ]; then echo "Ref variables match, continue..."; else echo "Ref references do not match, exiting."; exit 0; fi
   github-anotherrepo-ref:
     steps:
       - name: Checkout3
@@ -68,4 +70,5 @@ jobs:
           echo Commit ID = ${{ steps.checkout3.outputs.commit }}
           echo Commit URL = ${{ steps.checkout3.outputs.commit-url }}
           echo Ref = ${{ steps.checkout3.outputs.ref }}
+          if [ "${{ steps.checkout3.outputs.commit }}" = "b4b114f1881872dd1efb33ef7d474b48197c5889" ]; then echo "Commits are same"; else echo "Commit details dees not match, exiting."; exit 0; fi
   
