@@ -1,3 +1,4 @@
+
 apiVersion: automation.cloudbees.io/v1alpha1
 kind: workflow
 name: My workflow
@@ -11,33 +12,35 @@ jobs:
         shell: sh
         run: |
           echo "hello world"
-      - name: Publish workflow evidence item
-        uses: cloudbees-io/publish-evidence-item@v1
-        with:
-          content: |-
-              ## Test markup and property rendering - H2 Level
-                - Run ID: ${{ cloudbees.run_id }}
-                - [backend.tar](https://ourcompany.com/repo/backend.tar)
-              Character code - '&#124;'
-              ```
-                  jobs:
-                    build:
-                      steps:
-                      - Compile
-              ```
-              - **Be bold**
-              - _Rome is in Italy_
-              - ~~Hunger strike~~
-              # H1 Header
-              | Test   | Results |
-              |--------|---------|
-              | Test 1 | PASS    |
-              | Test 2 | FAIL    |
-              | Test 3 | PASS    |
-
-              > All builds are green
-
-              ![Success](https://media1.tenor.com/m/-8Uay6X3E3UAAAAd/gil-cat.gif)
-          format: MARKDOWN
-                      
-                      
+    needs:
+      - approval-job
+  approval-job:
+    delegates: cloudbees-io/manual-approval/custom-job.yml@v1
+    with:
+      approvers: ff67605a-b3ca-11ef-9745-42010a83ae7d
+      disallowLaunchByUser: false
+      instructions: some
+      approvalInputs: |
+        in1:
+          type: string
+          required: true
+          description: One of the required approver inputs
+        in2:
+          type: number
+          description: a numeric input
+        in3:
+          type: choice
+          options:
+            - op1
+            - op2
+  echo-approval-inputs:
+    steps:
+      - uses: docker://golang:1.20.3-alpine3.17
+        name: Echo approver inputs
+        shell: sh
+        run: |
+          echo comments: ${{needs.approval-job.outputs.comments }}
+          echo in1 input: ${{ fromJSON(needs.approval-job.outputs.approvalInputValues).in1 }}
+          echo in2 input: ${{ fromJSON(needs.approval-job.outputs.approvalInputValues).in2 }}
+    needs:
+      - approval-job
